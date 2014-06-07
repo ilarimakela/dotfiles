@@ -1,0 +1,56 @@
+alias ll='ls -laG'
+
+export PATH="/Users/ilari/projects/Solinor/rocketfactory/build/phar:/usr/local/mysql/bin:$PATH"
+export PATH="$HOME/Library/Haskell/bin:$PATH"
+
+export LC_CTYPE=en_GB.UTF-8
+export LC_ALL=en_GB.UTF-8
+
+source /Users/ilari/gDrive/projects/tools/git/contrib/completion/git-completion.bash
+__git_ps1 ()
+{
+    local string_limit=12;
+
+    local b="$(git symbolic-ref HEAD 2>/dev/null)";
+    if [ -n "$b" ]; then
+        local branch="${b##refs/heads/}"
+
+        if [ ${#branch} -gt "$string_limit" ]; then
+            local branch_string="${branch:0:${string_limit}}.."
+        else
+            local branch_string="${branch}"
+        fi
+
+        printf " %s%s" "${branch_string}" "$(__git_modified_count)"
+    fi
+}
+
+__git_branch_color ()
+{
+    local git_status="$(git status 2> /dev/null)"
+    if [[ ! ${git_status} =~ "working directory clean" ]]; then
+        local color="\033[01;31m"
+    else
+        local color="\033[01;33m"
+    fi
+    printf "${color}"
+}
+
+__git_modified_count ()
+{
+    local git_status=$(git status 2> /dev/null)
+    local dirty_count="$(printf "$git_status" | perl -ne 'm/^#\t/ && print' | wc -l | awk '{print $1}')"
+    
+    if [ "$dirty_count" -gt 0 ]; then
+        printf ":$dirty_count"
+    fi 
+}
+
+export PATH=/Users/ilari/bin/Sencha/Cmd/3.0.0.250:$PATH
+
+export SENCHA_CMD_3_0_0="/Users/ilari/bin/Sencha/Cmd/3.0.0.250"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# The next line updates PATH for the Google Cloud SDK.
+export PATH=/Users/ilari/google-cloud-sdk/bin:$PATH
