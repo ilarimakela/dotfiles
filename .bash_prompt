@@ -5,8 +5,8 @@ __git_ps1 ()
             my $count = () = `git status 2> /dev/null` =~ /#\t/sg; 
             $count = $count > 0 ? ":$count" : "";
 
-            my ($branch) = $b =~ ?refs\/heads\/(.*)?;
-            my $branch_string = (length($branch) >= 9 ? ($branch =~ ?^(.{0,12})?)[0] . "..." : $branch);
+            my ($branch) = $b =~ /refs\/heads\/(.*)/;
+            my $branch_string = (length($branch) >= 9 ? substr($branch, 0, 12) . "..." : $branch);
 
             print (" ($branch_string$count)");
         }'
