@@ -12,9 +12,6 @@ set gdefault
 set encoding=utf-8 nobomb
 " Change mapleader
 let mapleader=","
-" Don’t add empty newlines at the end of files
-set binary
-set noeol
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
@@ -26,10 +23,11 @@ endif
 set number
 " Enable syntax highlighting
 syntax on
-" Highlight current line
-set cursorline
 " Make tabs as wide as two spaces
-set tabstop=2
+set tabstop=4
+set tabstop=4
+set shiftwidth=4
+set expandtab
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
@@ -55,11 +53,6 @@ set shortmess=atI
 set showmode
 " Show the filename in the window titlebar
 set title
-if exists("&relativenumber")
-  " Use relative line numbers
-  set relativenumber
-  au BufReadPost * set relativenumber
-endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
@@ -72,3 +65,7 @@ function! StripWhitespace ()
 	call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace ()<CR>
+
+call pathogen#infect()
+call pathogen#helptags()
+
