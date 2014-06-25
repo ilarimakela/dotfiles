@@ -16,8 +16,9 @@ brew install node
 npm install -g nave
 
 # https://github.com/rupa/z
-mkdir -p ~/util/z
-curl https://raw.github.com/rupa/z/master/z.sh > ~/util/z/z.sh
+mkdir -p ~/util/ && cd ~/util/
+curl --location https://github.com/rupa/z/archive/v1.8.tar.gz | tar xz
+mv z-* z
 chmod +x ~/util/z/z.sh
 
 cd ~/util
