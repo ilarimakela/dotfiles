@@ -1,6 +1,6 @@
 [user]
     name = Ilari Mäkelä
-    email = ilari.makela@spoonfactory.com
+    email = ilari.makela@spoonfactory.fi
 [alias]
 	co = commit -am
 	up = pull
