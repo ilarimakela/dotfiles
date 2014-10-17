@@ -69,3 +69,4 @@ noremap <leader>ss :call StripWhitespace ()<CR>
 call pathogen#infect()
 call pathogen#helptags()
 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,bower_components
