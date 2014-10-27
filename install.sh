@@ -24,5 +24,8 @@ chmod +x ~/util/z/z.sh
 cd ~/util
 git clone git://github.com/dronir/SpotifyControl.git
 
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+   curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
 cd "$(dirname "$0")"
 ./sync.sh
