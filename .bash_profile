@@ -25,3 +25,9 @@ export LC_ALL="en_GB.UTF-8"
 complete -W "NSGlobalDomain" defaults
 
 PATH="$PATH:/usr/local/opt/coreutils/libexec/gnubin"
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+

@@ -27,5 +27,9 @@ git clone git://github.com/dronir/SpotifyControl.git
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
+# Git autocomplete
+rm -rf ~/.git-completion.bash &>/dev/null
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+
 cd "$(dirname "$0")"
 ./sync.sh
