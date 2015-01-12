@@ -1,0 +1,11 @@
+windows:
+  - name: Develop
+    layout: main-vertical
+    panes:
+      - vim
+      - commands:
+        - git status
+      - commands:
+        - vagrant up
+        - vagrant ssh
+
