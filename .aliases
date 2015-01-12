@@ -1,7 +1,5 @@
 alias st='open -a "Sublime Text 2"'
 mkdir -p ~/bin/
-[ -e ~/bin/subl ] || \
-    ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 alias preview="open -a '$PREVIEW'"
 alias safari="open -a safari"
 alias firefox="open -a firefox"
@@ -86,3 +84,5 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
 done
+
+alias diskusage="du -k | sort -n | perl -ne 'if ( /^(\d+)\s+(.*$)/){$l=log($1+.1);$m=int($l/log(1024)); printf  ("%6.1f\t%s\t%25s  %s\n",($1/(2**(10*$m))),(("K","M","G","T","P")[$m]),"*"x (1.5*$l),$2);}'"
