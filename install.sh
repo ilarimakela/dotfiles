@@ -21,6 +21,8 @@ curl --location https://github.com/rupa/z/archive/v1.8.tar.gz | tar xz
 mv z-* z
 chmod +x ~/util/z/z.sh
 
+gem install teamocil
+
 cd ~/util
 git clone git://github.com/dronir/SpotifyControl.git
 
