@@ -24,7 +24,7 @@ alias ll="ls -la ${colorflag}"
 # List only directories
 alias lsd='ls -la | grep "^d"'
 
-alias spotify="osascript ~/code/SpotifyControl/SpotifyControl.scpt"
+alias spotify="osascript ~/util/SpotifyControl/SpotifyControl.scpt"
 
 # Always use color output for `ls`
 if [[ "$OSTYPE" =~ ^darwin ]]; then
