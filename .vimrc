@@ -70,3 +70,6 @@ call pathogen#infect()
 call pathogen#helptags()
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,bower_components
+
+" Nerdtree like list view in :E mode
+let g:netrw_liststyle=3
