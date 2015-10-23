@@ -190,15 +190,6 @@ function clean_dockers {
     done
 
     echo ' done'
-    echo 'Removing images: '
-
-    for docker in $( docker images -a | grep ago | awk '{print $3}')
-    do
-        docker rmi $docker &>/dev/null
-        echo -n "."
-    done
-
-    echo ' done'
 }
 
 function reset_boot2docker {
